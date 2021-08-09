@@ -423,7 +423,7 @@ image::images/Faucet_jumpi_instruction.png["JUMPI instruction leading to fallbac
 
 我们来看一下调度员的核心代码块。假设我们收到的长度大于4个字节的calldata，“JUMPI”指令不会跳转到回退函数。相反，代码执行将遵循下一条指令：
 
-[[faucet_instructions]]
+[[faucet_instructions2]]
 ----
 PUSH1 0x0
 CALLDATALOAD

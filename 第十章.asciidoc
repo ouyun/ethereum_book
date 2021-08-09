@@ -274,7 +274,7 @@ https://github.com/ethereumbook/ethereumbook/blob/develop/code/truffle/METoken/t
 
 之后你的目录看起来像：
 
-[[truffle_directory]]
+[[truffle_directory2]]
 ----
 METoken/
 ├── contracts
@@ -315,7 +315,7 @@ https://github.com/ethereumbook/ethereumbook/blob/develop/code/truffle/METoken/c
 .METoken.sol : A Solidity contract implementing an ERC20 Token
 [source,solidity,linenums]
 ----
-include::code/METoken/contracts/METoken.sol[]
+include::code/truffle/METoken/contracts/METoken.sol[]
 ----
 
 在这里，我们定义可选变量+name+，+symbol+和+decimals+。我们还定义了一个+_initial_supply+变量，设置为2,100万个Token，以及两个小数细分（总共21亿）。在契约的初始化（构造函数）函数中，我们将+totalSupply+设置为等于+_initial_supply+，并将所有+_initial_supply+分配给创建 +METoken+ 契约的帐户余额（+msg.sender+）。
@@ -347,7 +347,7 @@ https://github.com/ethereumbook/ethereumbook/blob/develop/code/truffle/METoken/m
 .2_deploy_contracts: Migration to deploy METoken
 [source,javascript,linenums]
 ----
-include::code/METoken/migrations/2_deploy_contracts.js[]
+include::code/truffle/METoken/migrations/2_deploy_contracts.js[]
 
 var METoken = artifacts.require("METoken");
 

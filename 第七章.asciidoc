@@ -207,11 +207,9 @@ src = web3.eth.accounts[0];
 dst = web3.eth.accounts[1];
 ----
 
-[[tx_value_nodata]]
-===== 有value的交易（支付），没有data
 
 [[tx_value_nodata_src]]
-.Value, no data
+.有交易数额, 无交易数据
 [source,javascript]
 ----
 web3.eth.sendTransaction({from: src, to: dst, value: web3.toWei(0.01, "ether"), data: ""});
@@ -224,11 +222,8 @@ web3.eth.sendTransaction({from: src, to: dst, value: web3.toWei(0.01, "ether"), 
 image::images/parity_txdemo_value_nodata.png["Parity wallet showing a transaction with value, but no data"]
 
 
-[[tx_value_data]]
-===== 有value（支付）data的交易
-
 [[tx_value_data_src]]
-.Value and data
+.有交易数额, 也有交易数据
 [source,javascript]
 ----
 web3.eth.sendTransaction({from: src, to: dst, value: web3.toWei(0.01, "ether"), data: "0x1234"});
@@ -241,11 +236,8 @@ web3.eth.sendTransaction({from: src, to: dst, value: web3.toWei(0.01, "ether"), 
 image::images/parity_txdemo_value_data.png["Parity wallet showing a transaction with value and data"]
 
 
-[[tx_novalue_nodata]]
-===== 0 value 的交易，只有数据
-
-[[tx_novalue_nodata_src]]
-.No value, only data
+[[tx_novalue_data_src]]
+.无交易数额, 仅有交易数据
 [source,javascript]
 ----
 web3.eth.sendTransaction({from: src, to: dst, value: 0, data: "0x1234"});
@@ -258,11 +250,8 @@ web3.eth.sendTransaction({from: src, to: dst, value: 0, data: "0x1234"});
 image::images/parity_txdemo_novalue_data.png["Parity wallet showing a transaction with no value, only data"]
 
 
-[[tx_novalue_data]]
-===== 既没有value（支付）也没有data的交易
-
 [[tx_novalue_nodata_src]]
-.No value, no data
+.既没有交易数额, 也没有交易数据
 [source,javascript]
 ----
 web3.eth.sendTransaction({from: src, to: dst, value: 0, data: ""}));
@@ -545,10 +534,10 @@ ECDSA必然是一门相当复杂的数学; 完整的解释超出了本书的范�
 要在以太坊签署交易，发件人必须：
 
 1. 创建一个包含九个字段的交易数据结构：nonce，gasPrice，startGas，to，value，data，v，r，s
-1. 生成交易的RLP编码的序列化消息
-1. 计算此序列化消息的Keccak256哈希
-1. 计算ECDSA签名，用发起EOA的私钥签名散列
-1. 在交易中插入ECDSA签名计算出的 +r+ 和 +s+ 值
+2. 生成交易的RLP编码的序列化消息
+3. 计算此序列化消息的Keccak256哈希
+4. 计算ECDSA签名，用发起EOA的私钥签名散列
+5. 在交易中插入ECDSA签名计算出的 +r+ 和 +s+ 值
 
 [[raw_tx]]
 ==== 原始交易创建和签名

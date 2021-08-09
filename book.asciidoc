@@ -1,0 +1,67 @@
+= 精通以太坊
+:author: Andreas M. Antonopoulos, Gavin Wood
+:doctype: book
+:toc:
+:toclevels: 6
+:media: prepress
+:icons: font
+:pdf-page-size: 8in x 9in
+:pdf-style: misc/theme.yml
+
+== LICENSE
+
+This copy is for PERSONAL USE ONLY. You may read it for free. You may NOT distribute this book. _Mastering Ethereum_ is licensed CC-BY-NC-ND. The "NC-ND" part of the license means no commercial use and NO DERIVATIVES. Derivatives include: HTML, PDF, ebook, mobi, Kindle or other "typeset" versions. You cannot create derivatives.
+
+You are not allowed to publish a PDF "for convenience". That is a gross violation of the (already generous) open license. You are not allowed to translate and publish a derivative. Translation licensing rights must be negotiated with the publisher O'Reilly Media.
+
+_Mastering Ethereum_ will be released under an open license (CC-BY-SA) in January 2020, one year after initial publication. Until then, please respect the work of the publisher, the authors and their licensing terms. Just because you can produce a PDF and just because this book is available for free online does not mean you can violate the rights of the publisher and authors.
+
+Violating this license does more than rob the authors and publishers of the ability to benefit financially from their hard work. It also discourages them and other authors and publishers from releasing books in an open, free-to-read format like this and deprives our creative commons.
+
+
+include::前言.asciidoc[]
+
+include::术语.asciidoc[]
+
+include::第一章.asciidoc[]
+
+include::第二章.asciidoc[]
+
+include::第三章.asciidoc[]
+
+include::第四章.asciidoc[]
+
+include::第五章.asciidoc[]
+
+include::第六章.asciidoc[]
+
+include::第七章.asciidoc[]
+
+include::第八章.asciidoc[]
+
+include::第九章.asciidoc[]
+
+include::第十章.asciidoc[]
+
+include::第十一章.asciidoc[]
+
+include::第十二章.asciidoc[]
+
+include::第十三章.asciidoc[]
+
+include::第十四章.asciidoc[]
+
+include::第十五章.asciidoc[]
+
+include::第十六章.asciidoc[]
+
+include::第十七章.asciidoc[]
+
+[appendix]
+include::第十八章.asciidoc[]
+
+[appendix]
+include::第十九章.asciidoc[]
+
+[index]
+== Index

@@ -1,8 +1,6 @@
 [[testnets]]
 == 以太坊测试网（Testnets）
 
-<<第三章#,上一章：以太坊客户端>>
-
 === 什么是测试网？
 
 测试网络（简称testnet）用于模拟以太网主网的行为。有一些公开的测试网络可以替代以太坊区块链。这些网络上的货币毫无价值，但它们仍然很有用，因为合约和协议变更的功能可以在不中断以太网主网或使用真实货币的情况下进行测试。当主网（简称mainnet）即将包含对以太坊协议的任何重大改变时，其测试主要在这些测试网络上完成。这些测试网络也被大量开发人员用于在部署到主网之前测试应用程序。
@@ -21,7 +19,7 @@
 
 Metamask完全支持Ropsten，Kovan和Rinkeby测试网，但也可以连接到其他测试网和本地网。在Metamask中，只需单击“main network”下拉菜单，即可切换网络。MetaMask还提供了一个“buy”测试ether的选项，该选项将你引导至你可以请求免费测试以太网的faucet。如果使用Ropsten测试网，则可以从Ropsten测试faucet服务中获取ether。你可以从此页面访问此faucet。它需要Metamask扩展才能工作。https://faucet.metamask.io/
 
-===== Infura
+==== Infura
 
 当MetaMask连接到测试网络时，它使用Infura服务提供商来访问JSON-RPC接口。Infura诞生的目的是为ConsenSys内部项目提供稳定可靠的RPC访问。除了JSON-RPC API之外，Infura还提供REST（表述性状态转移）API，IPFS（星际文件系统，即去中心化存储）API和Websockets（即流式传输）API。
 
@@ -94,20 +92,20 @@ parity --chain ropsten
 parity --chain kovan
 ----
 
-== 深入以太坊Testnets
+=== 深入以太坊Testnets
 
 在这个阶段你可能会想：“我明白我为什么要使用测试网络，但为什么会有这么多呢？”
 
 https://www.ethnews.com/ropsten-to-kovan-to-rinkeby-ethereums-testnet-troubles
 
-=== 工作量证明（挖矿）Proof-of-Work (Mining) 与 权威证明（联合签名）Proof-of-Authority (Federated Signing)
+==== 工作量证明（挖矿）Proof-of-Work (Mining) 与 权威证明（联合签名）Proof-of-Authority (Federated Signing)
 https://github.com/ethereum/guide/blob/master/poa.md
 
-=== Morden（原始测试网）
+==== Morden（原始测试网）
 
 https://blog.ethereum.org/2016/11/20/from-morden-to-ropsten/
 
-=== Ropsten
+==== Ropsten
 
 如果你想开始在Ropsten网络上测试合约，有几个faucet可以供给你Ropsten的ether。如果faucet不起作用，请尝试不同的faucet。
 
@@ -129,13 +127,13 @@ http://pool.ropsten.ethereum.org/
 * Etherscan Ropsten Pool
 https://ropsten.etherscan.io/
 
-=== Rinkeby
+==== Rinkeby
 
 Rinkeby水龙头位于https://faucet.rinkeby.io/。
 要请求测试ether，有必要在Twitter，Google Plus或Facebook上发布公开信息。https://www.rinkeby.io/
 https://rinkeby.etherscan.io/
 
-=== Kovan
+==== Kovan
 
 Kovan testnet支持各种方法来请求测试ether。
 更多信息可以在 https://github.com/kovan-testnet/faucet/blob/master/README.md 找到。
@@ -147,7 +145,7 @@ https://kovan-testnet.github.io/website/
 https://kovan.etherscan.io/
 
 
-== 以太坊经典Testnets
+=== 以太坊经典Testnets
 
 ==== Morden
 
@@ -221,7 +219,3 @@ $ ganache-cli \
   --gasLimit=8000000 \
   --gasPrice=4000000000;
 ----
-
-<<第五章#,下一章：密钥与地址>>
-
-image::images/thanks.jpeg["赞赏译者",height=400,align="center"]

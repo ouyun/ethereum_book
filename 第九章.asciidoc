@@ -1,12 +1,10 @@
-<<第八章#,上一章：智能合约>>
+== 开发工具，框架和库
 
-= 开发工具，框架和库
-
-== 框架
+=== 框架
 
 框架可使以太坊智能合约开发变得轻松。自己做所有事情，你可以更好地理解所有事物如何结合在一起，但这是一项繁琐而重复的工作。下面列出的框架可以自动执行某些任务并使开发变得轻而易举。
 
-=== Truffle
+==== Truffle
 
 Github; https://github.com/Trufflesuite/Truffle
 
@@ -20,7 +18,7 @@ Truffle Boxes; http://Truffleframework.com/boxes/
 
 
 [[installing_Truffle]]
-==== 安装 Truffle 框架
+===== 安装 Truffle 框架
 
 Truffle 框架由多个 +NodeJS+包组成。在我们安装+Truffle+之前，我们需要安装+NodeJS+和Node Package Manager（+npm+）的最新版。
 
@@ -61,7 +59,7 @@ installed 1 package in 37.508s
 ----
 
 [[Truffle_box]]
-==== 集成预编译的 Truffle 项目 (Truffle Box)
+===== 集成预编译的 Truffle 项目 (Truffle Box)
 
 如果我们想要使用或创建一个建立在预先构建的样板上的DApp，那么在Truffle Boxes链接中，我们可以选择一个现有的Truffle项目，然后运行以下命令来下载并提取它：
 
@@ -70,7 +68,7 @@ $ Truffle unbox <BOX_NAME>
 ----
 
 [[Truffle_project_directory]]
-==== 创建 Truffle 项目目录
+===== 创建 Truffle 项目目录
 
 对于我们将使用Truffle的每个项目，我们创建一个项目目录并在该目录中初始化Truffle。Truffle将在我们的项目目录中创建必要的目录结构。通常，我们为项目目录指定一个描述我们项目的名称。对于这个例子，我们将使用Truffle从 <<simple_contract_example>> 部署我们的Faucet合约，因此我们将命名项目文件夹+Faucet+。
 
@@ -146,7 +144,7 @@ $ npm install dotenv Truffle-wallet-provider ethereumjs-wallet
 
 Package.json“engines”字段配置链接; https://docs.npmjs.com/files/package.json#engines 
 
-==== 配置 Truffle
+===== 配置 Truffle
 
 Truffle 创建一些空的配置文件，+Truffle.js+和+Truffle-config.js+。在Windows系统上，当你尝试运行命令+Truffle+，Windows尝试运行+Truffle.js+时，+ Truffle.js+名称可能会导致冲突。为了避免这种情况，我们将删除+Truffle.js+并使用+Truffle-config.js+来支持Windows用户，他们的确已经受够了。
 
@@ -175,7 +173,7 @@ module.exports = {
 
 在下面的章节中，我们将配置其他网络供Truffle使用，比如+ganache+ test-RPC区块链和托管网络提供商Infura。随着我们添加更多网络，配置文件将变得更加复杂，但它也将为我们的测试和开发工作流程提供更多选择。
 
-==== 使用Truffle部署合约
+===== 使用Truffle部署合约
 
 我们现在有一个针对我们的 +Faucet+ 项目的基本工作目录，并且我们已经配置了Truffle和它的依赖关系。合约在我们项目的+contracts +子目录中。该目录已经包含一个“helper”合约，+Migrations.sol+管理合约升级。我们将在后面的章节中研究 +Migrations.sol+ 的使用。
 
@@ -198,7 +196,7 @@ Compiling ./contracts/Migrations.sol...
 Writing artifacts to ./build/contracts
 ----
 
-==== Truffle migrations - 理解部署脚本
+===== Truffle migrations - 理解部署脚本
 
 Truffle提供了一个名为_migration_的部署系统。如果你曾在其他框架中工作过，你可能会看到类似的东西：Ruby on Rails，Python Django和许多其他语言和框架都有+migrate+命令。
 
@@ -274,7 +272,7 @@ Saving successful migration to network...
 Saving artifacts...
 ----
 
-==== 使用Truffle控制台
+===== 使用Truffle控制台
 
 Truffle提供了一个JavaScript控制台，我们可以使用这个控制台与Ethereum网络（通过本地节点）进行交互，与已部署的合约进行交互，并与钱包提供商进行交互。在我们当前的配置（+localnode+）中，节点和钱包提供商是我们的本地parity客户端。
 
@@ -359,7 +357,7 @@ Truffle(localnode)> Faucet.deployed().then(instance => {instance.withdraw(web3.t
 StatusError: Transaction: 0xe147ae9e3610334ada8d863c9028c12bd0501be2d0cfd05865c18612b92d3f9c exited with an error (status 0).
 ----
 
-=== Embark
+==== Embark
 
 Github; https://github.com/embark-framework/embark/
 
@@ -371,7 +369,7 @@ Github; https://github.com/embark-framework/embark/
 $ npm -g install embark
 ----
 
-=== OpenZeppelin
+==== OpenZeppelin
 
 https://openzeppelin.org/[OpenZeppelin] 是Solidity语言的一个可重复使用且安全的智能合约的开放框架。
 
@@ -482,7 +480,7 @@ Website link; https://openzeppelin.org/
 
 Docs link; https://openzeppelin.org/api/docs/open-zeppelin.html
 
-=== zeppelin_os
+==== zeppelin_os
 https://github.com/zeppelinos[zeppelin_os] 是一款开源的分布式工具和服务平台，位于EVM之上，安全地开发和管理智能合约应用程序。
 
 与OpenZeppelin的代码每次都需要重新部署每个应用程序不同，zeppelin_os的代码处于链上。需要特定功能的应用程序（例如ERC20 token）不仅不需要重新设计和重新审计其实施（OpenZeppelin解决了这些问题），而且甚至不需要部署它。使用zeppelin_os，应用程序可直接与 链上的token实现进行交互，这与桌面应用程序与其底层操作系统的组件进行交互的方式大致相同。
@@ -506,9 +504,9 @@ Website link; https://zeppelinos.org
 Blog: https://blog.zeppelinos.org
 Github: https://github.com/zeppelinos
 
-== 实用程序
+=== 实用程序
 
-=== ethereumJS helpeth: 命令行实用程序
+==== ethereumJS helpeth: 命令行实用程序
 
 helpeth是一个命令行工具，使开发人员更容易的操作密钥和交易。
 
@@ -546,11 +544,12 @@ Options:
   --help             Show help                                         [boolean]
 ----
 
-=== dapp.tools
+==== dapp.tools
 
 https://dapp.tools/
 
 安装:
+
 ----
 $ curl https://nixos.org/nix/install | sh
 $ nix-channel --add https://nix.dapphub.com/pkgs/dapphub
@@ -558,24 +557,24 @@ $ nix-channel --update
 $ nix-env -iA dapphub.{dapp,seth,hevm,evmdis}
 ----
 
-==== Dapp
+===== Dapp    
 https://dapp.tools/dapp/
 
-==== Seth
+===== Seth
 https://dapp.tools/seth/
 
-==== Hevm
+===== Hevm
 https://dapp.tools/hevm/
 
-==== SputnikVM
+===== SputnikVM
 
 SputnikVM是一个独立的可插拔的用于不同的基于以太坊的区块链的虚拟机。它是用Rust编写的，可以用作二进制，货物箱，共享库，或者通过FFI，Protobuf和JSON接口集成。它有一个单独的用于测试目的的二进制sputnikvm-dev，它模拟大部分JSON RPC API和区块挖掘。
 
 Github link; https://github.com/etcdevteam/sputnikvm
 
-== Libraries
+=== Libraries
 
-=== web3.js
+==== web3.js
 
 web3.js是以太坊兼容的JS API，用于通过以太坊基金会开发的JSON RPC与客户进行通信。
 
@@ -587,7 +586,7 @@ Documentation link for web3.js API 0.2x.x; https://github.com/ethereum/wiki/wiki
 
 Documentation link for web3.js API 1.0.0-beta.xx; https://web3js.readthedocs.io/en/1.0/web3.html
 
-=== web3.py
+==== web3.py
 
 web3.py 是一个用于与以太坊区块链进行交互的Python库。它现在也在以太坊基金会的GitHub中。
 
@@ -597,7 +596,7 @@ PyPi link; https://pypi.python.org/pypi/web3/4.0.0b9
 
 Documentation link; https://web3py.readthedocs.io/
 
-=== EthereumJS
+==== EthereumJS
 
 以太坊的库和实用程序集合。
 
@@ -605,7 +604,7 @@ Github link; https://github.com/ethereumjs
 
 Website link; https://ethereumjs.github.io/
 
-=== web3j
+==== web3j
 
 web3j 是Java和Android库，用于与Ethereum客户端集成并使用智能合约。
 
@@ -615,14 +614,14 @@ Website link; https://web3j.io
 
 Documentation link; https://docs.web3j.io
 
-=== Etherjar
+==== Etherjar
 
 
 Etherjar 是与Ethereum集成并与智能合约一起工作的另一个Java库。它专为基于Java 8+的服务器端项目而设计，提供RPC的低层和高层封装，以太坊数据结构和智能合约访问。
 
 Github link; https://github.com/infinitape/etherjar
 
-=== Nethereum
+==== Nethereum
 
 Nethereum 是以太坊的.Net集成库。
 
@@ -632,7 +631,7 @@ Website link; http://nethereum.com/
 
 Documentation link; https://nethereum.readthedocs.io/en/latest/
 
-=== ethers.js
+==== ethers.js
 
 ethers.js 库是一个紧凑，完整，功能齐全，经过广泛测试的以太坊库，完全根据MIT许可证获得，并且已收到来自以太坊基金会的DevEx资助以扩展和维护。
 
@@ -641,14 +640,10 @@ GitHub link: https://github.com/ethers-io/ethers.js
 Documentation: https://docs.ethers.io
 
 
-=== Emerald Platform
+==== Emerald Platform
 
 Emerald Platform提供了库和UI组件，可以在以太坊上构建Dapps。Emerald JS和Emerald JS UI提供了一组模块和React组件来构建Javascript应用程序和网站，Emerald SVG Icons是一组区块链相关的图标。除了Javascript库之外，它还有Rust库来操作私钥和交易签名。所有Emerald库和组件都使用 Apache 2许可。
 
 Github link; https://github.com/etcdevteam/emerald-platform
 
 Documentation link; https://docs.etcdevteam.com
-
-<<第十章#,下一章：Tokens>>
-
-image::images/thanks.jpeg["赞赏译者",height=400,align="center"]
